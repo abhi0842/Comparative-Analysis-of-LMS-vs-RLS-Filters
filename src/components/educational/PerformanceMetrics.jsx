@@ -44,7 +44,7 @@ export const PerformanceMetrics = () => {
               <th style={{ padding: "0.65rem 0.55rem", textAlign: "left", color: "#263746" }}>
                 {metric.label}<div style={{ color: "#687684", fontSize: "0.68rem", fontWeight: "normal" }}>{metric.unit}</div>
               </th>
-              <td style={{ padding: "0.65rem 0.55rem" }}>{formatMetric(metric.before, metric.key)}</td>
+              <td style={{ padding: "0.65rem 0.55rem", color: "#000" }}>{formatMetric(metric.before, metric.key)}</td>
               <td style={{ padding: "0.65rem 0.55rem", color: isImproved(Number(metric.lms)) ? "#16803c" : "#b42318", fontWeight: 600 }}>{formatMetric(metric.lms, metric.key)}</td>
               <td style={{ padding: "0.65rem 0.55rem", color: isImproved(Number(metric.rls)) ? "#16803c" : "#b42318", fontWeight: 600 }}>{formatMetric(metric.rls, metric.key)}</td>
             </tr>

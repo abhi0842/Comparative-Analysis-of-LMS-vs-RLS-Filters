@@ -24,7 +24,42 @@ export const Instruction = () => {
             </ol>
           </section>
 
-          
+          <section style={{ margin: "1rem 0 1.25rem", padding: "1rem", background: "#f7f8fa", borderLeft: "4px solid #b08968", borderRadius: "6px" }}>
+            <h2 style={{ fontSize: "1.1rem", color: "#344454", margin: "0 0 0.4rem" }}>
+              Recommended Parameters to Try
+            </h2>
+            
+            <div style={{ overflowX: "auto" }}>
+              <table style={{ width: "100%", minWidth: "620px", borderCollapse: "collapse", textAlign: "center", fontVariantNumeric: "tabular-nums" }}>
+                <thead>
+                  <tr style={{ background: "#eceff2", color: "#344454" }}>
+                    <th style={{ padding: "0.55rem", textAlign: "left" }}>Artifact</th>
+                    <th style={{ padding: "0.55rem" }}>Shared order M</th>
+                    <th style={{ padding: "0.55rem" }}>LMS step μ</th>
+                    <th style={{ padding: "0.55rem" }}>RLS λ</th>
+                    <th style={{ padding: "0.55rem" }}>RLS δ</th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["PLI", "8", "0.5", "1.0", "0.1",],
+                    ["Baseline wander", "48", "0.001", "1.0", "10",],
+                    ["EMG", "4", "0.35", "1.0", "0.1",],
+                  ].map(([artifact, order, stepSize, forgettingFactor, regularization, reduction]) => (
+                    <tr key={artifact} style={{ borderTop: "1px solid #dfe5ea" }}>
+                      <th style={{ padding: "0.55rem", textAlign: "left", color: "#263746" }}>{artifact}</th>
+                      <td style={{ padding: "0.55rem" }}>{order}</td>
+                      <td style={{ padding: "0.55rem" }}>{stepSize}</td>
+                      <td style={{ padding: "0.55rem" }}>{forgettingFactor}</td>
+                      <td style={{ padding: "0.55rem" }}>{regularization}</td>
+                      <td style={{ padding: "0.55rem" }}>{reduction}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
         </div>
       </div>
     </div>

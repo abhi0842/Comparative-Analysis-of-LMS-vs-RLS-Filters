@@ -13,7 +13,7 @@ export const TopPanel = () => {
   return (
     <div className={styles.Container}>
       <div className={styles.panelContainer}>
-        <h1>LMS vs RLS — ECG Denoising Simulation</h1>
+        <h1>Comparative Analysis of LMS and RLS Algorithms on ECG Signals</h1>
         <div className={styles.buttonContainer}>
           <button ref={buttonRef} className={styles.panelButton} onClick={toggleInstruction}>
             <span className={styles.buttonIcon}>ℹ️</span>

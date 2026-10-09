@@ -46,7 +46,7 @@ export const EcgFilter = () => {
     referenceSignal, desiredSignal, cleanSignal, artifactSignal,
     setDiagnostics, setMetrics, originalFs, setFilteredSamples,
     setLmsFilteredSamples,
-    datasetMeta, selectedLead, selectedArtifact,
+    datasetMeta, selectedLead,
     windowStart, windowLength,
   } = useContext(SimulationContext);
 
@@ -162,7 +162,6 @@ export const EcgFilter = () => {
   const lengthIdx = Math.max(1, Math.min(Ntotal - startIdx, Math.floor(windowLength) || 1));
   const endIdx = startIdx + lengthIdx;
   const sSlice = cleanSignal?.slice(startIdx, endIdx) || [];
-  const desiredSlice = desiredSignal?.slice(startIdx, endIdx) || [];
   const rlsSlice = result.rlsOutput.slice(startIdx, endIdx);
   const lmsSlice = result.lmsOutput.slice(startIdx, endIdx);
 
@@ -177,15 +176,6 @@ export const EcgFilter = () => {
         borderColor: "#2563eb",
         borderWidth: 1.8,
         borderDash: [6, 4],
-        pointRadius: 0,
-        tension: 0.05,
-      },
-      {
-        label: `Artifact-contaminated d[n] — ${selectedArtifact}`,
-        data: downsampleByIndexOffset(desiredSlice, startIdx, 20000),
-        borderColor: "#dc2626",
-        borderWidth: 1.1,
-        borderDash: [2, 3],
         pointRadius: 0,
         tension: 0.05,
       },
