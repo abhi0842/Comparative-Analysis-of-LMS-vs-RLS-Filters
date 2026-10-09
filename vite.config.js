@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // base must match the repository path for GitHub Pages project sites
-  base: "/LMSvsRLS/",
+  base: "/Comparative-Analysis-of-LMS-vs-RLS-Filters/",
 })
